@@ -3,7 +3,7 @@ public class FractionTester {
 	public static void main(String[] args) {
 		Fractions first = new Fractions(1, 4);
 		Fractions second = new Fractions(2, 5);
-		
+
 		System.out.println("The numerator of first fraction is " + first.getNumerator());
 		System.out.println("The denominator of first fraction is " + first.getDenominator());
 		System.out.println("The numerator of second fraction is " + second.getNumerator());

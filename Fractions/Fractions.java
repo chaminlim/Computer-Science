@@ -15,25 +15,25 @@ public class Fractions {
 	public Fractions add(Fractions second) {
 		int num2 = num * second.getDenominator() + second.getNumerator() * denom;
 		int denom2 = denom * second.getDenominator();
-		
+
 		return new Fractions(num2, denom2);
-	} 
+	}
 	public Fractions subtract(Fractions second) {
 		int num2 = num * second.getDenominator() - second.getNumerator() * denom;
 		int denom2 = denom * second.getDenominator();
-		
+
 		return new Fractions(num2, denom2);
 	}
 	public Fractions multiple(Fractions second) {
 		int num2 = num * second.getNumerator();
 		int denom2 = denom * second.getDenominator();
-		
+
 		return new Fractions(num2, denom2);
 	}
 	public Fractions divide(Fractions second) {
 		int num2 = num * second.getDenominator();
 		int denom2 = denom * second.getNumerator();
-		
+
 		return new Fractions(num2, denom2);
 	}
 	public String toString() {
