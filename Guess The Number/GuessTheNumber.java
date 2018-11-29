@@ -9,7 +9,6 @@ public class GuessTheNumber {
 		Scanner scanner = new Scanner(System.in);
 		// Welcome message for user and deciding their name.
 		System.out.println("Welcome to the Guess The Number!");
-		System.out.println("Please enter your name.");
 
 		// Deciding who goes first - computer and user.
 		System.out.println("We will decide who will decide the number.");
