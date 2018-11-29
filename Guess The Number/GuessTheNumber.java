@@ -8,13 +8,11 @@ public class GuessTheNumber {
 
 		Scanner scanner = new Scanner(System.in);
 		// Welcome message for user and deciding their name.
-		System.out.println("Welcome to the Game of Nim!");
+		System.out.println("Welcome to the Guess The Number!");
 		System.out.println("Please enter your name.");
-		String name = scanner.nextLine();
-		System.out.println("Hello " + name + "!");
 
 		// Deciding who goes first - computer and user.
-		System.out.println("We will decide who is going first.");
+		System.out.println("We will decide who will decide the number.");
 		System.out.println("...");
 		try { // Loading to make the game more natural.
 			Thread.sleep(1000);
@@ -24,11 +22,11 @@ public class GuessTheNumber {
 		int order = (int) (Math.random() * 2);
 		switch (order) {
 		case 0:
-			System.out.println("Looks like, Computer is going first!");
+			System.out.println("Looks like, Computer is choosing the number!");
 			turn = true;
 			break;
 		case 1:
-			System.out.println("Looks like, " + name + " is going first!");
+			System.out.println("Looks like, you are choosing the number.");
 			turn = false;
 			break;
 		default:
@@ -57,6 +55,7 @@ public class GuessTheNumber {
 		if (turn == false) {
 			int num = (int) (Math.random() * 100 + 1);
 			int count = 0;
+			int upperBound = 0;
 			System.out.println("Is the number " + num + "?");
 			String reply = scanner.next();
 			while (!(reply.equals("correct")) && (reply.equals("high") || reply.equals("low"))) {
@@ -64,8 +63,17 @@ public class GuessTheNumber {
 					System.out.println("Yay, I got it right! My attempt was " + count + ".");
 				}
 				if(reply.equals("high")) {
+					upperBound += num;
 					num = (int)(Math.random()*(num-1)+1);
 					count++;
+					System.out.println("Is the number " + num + "?");
+					reply = scanner.next();
+				}
+				if(reply.equals("low")){
+					num = (int)(Math.random()*(upperBound-1)+num);
+					count++;
+					System.out.println("Is the number " + num + "?");
+					reply = scanner.next();
 				}
 			}
 		}
