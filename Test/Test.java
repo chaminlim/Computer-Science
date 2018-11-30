@@ -8,7 +8,6 @@ public class Test{
         else
           System.out.print("0");
       }
-      System.out.print("\n");
     }
   }
 }
