@@ -23,11 +23,18 @@ public class GuessTheNumber {
 		switch (order) {
 		case 0:
 			System.out.println("Looks like, Computer is choosing the number!");
-			turn = false;
+			System.out.println("Computer has chose the number.");
+			turn = true;
 			;
 			break;
 		case 1:
 			System.out.println("Looks like, you are choosing the number.");
+			System.out.println("Choose the number please.");
+			try { // Loading to make the game more natural.
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			turn = false;
 			break;
 		default:
