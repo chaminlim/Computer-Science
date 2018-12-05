@@ -1,6 +1,7 @@
 
 //Chamin Lim; 11/16/18; Period 1
 import java.util.Scanner;
+
 public class GuessTheNumber {
 	private static boolean turn;
 
@@ -22,7 +23,8 @@ public class GuessTheNumber {
 		switch (order) {
 		case 0:
 			System.out.println("Looks like, Computer is choosing the number!");
-			turn = true;
+			turn = false;
+			;
 			break;
 		case 1:
 			System.out.println("Looks like, you are choosing the number.");
@@ -54,23 +56,26 @@ public class GuessTheNumber {
 		if (turn == false) {
 			int num = (int) (Math.random() * 100 + 1);
 			int count = 0;
-			int upperBound = 0;
+			int upperBound = 100;
+			int lowerBound = 1;
 			System.out.println("Is the number " + num + "?");
 			String reply = scanner.next();
-			while (!(reply.equals("correct")) && (reply.equals("high") || reply.equals("low"))) {
-				if(reply.equals("correct")) {
+			while (reply.equals("correct") || reply.equals("high") || reply.equals("low")) {
+				if (reply.equals("correct")) {
 					System.out.println("Yay, I got it right! My attempt was " + count + ".");
+					break;
 				}
-				if(reply.equals("high")) {
-					upperBound += num;
-					num = (int)(Math.random()*(num-1)+1);
+				if (reply.equals("high")) {
+					upperBound = num - 1;
 					count++;
+					num = (int) (Math.random() * (upperBound - lowerBound + 1) + lowerBound);
 					System.out.println("Is the number " + num + "?");
 					reply = scanner.next();
 				}
-				if(reply.equals("low")){
-					num = (int)(Math.random()*(upperBound-1)+num);
+				if (reply.equals("low")) {
+					lowerBound = num + 1;
 					count++;
+					num = (int) (Math.random() * (upperBound - lowerBound + 1) + lowerBound);
 					System.out.println("Is the number " + num + "?");
 					reply = scanner.next();
 				}
