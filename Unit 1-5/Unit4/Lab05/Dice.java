@@ -1,4 +1,4 @@
-	//Name:    Date:
+	//Name: Chamin Lim,  Date: 4/3/2018
    public class Dice
    {
       private int myOne, myTwo;
@@ -9,27 +9,19 @@
       }
       public void roll()
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+         myOne = random();
+         myTwo = random();
       }
       public int total()
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+         return myOne + myTwo;
       }
       public boolean doubles()
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+         if(myOne == myTwo)
+				return true;
+			else
+				return false;
       }
       public String toString()
       {
