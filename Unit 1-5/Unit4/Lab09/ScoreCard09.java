@@ -1,4 +1,4 @@
-	//Name______________________________ Date_____________
+	//Name: Chamin Lim, Date: 12/13/18
    import javax.swing.*;
    import java.awt.*;
    public class ScoreCard09 extends JPanel
@@ -7,12 +7,12 @@
       public ScoreCard09()
       {
          setLayout(new GridLayout(2, 18));
-      
+
          for(int x = 1; x <= 18; x++)
          {
             add(new JLabel("" + x, SwingConstants.CENTER));
          }
-      
+
          input = new JTextField[18];
          for(int x = 0; x < input.length; x++)
          {
@@ -22,34 +22,40 @@
       }
       public void randomize()
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+        for(int x = 0; x < input.length; x++){
+          input[x].setText("" + (int)(Math.random()*4+1));
+        }
       }
       public int findTotal()
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+        int sum = 0;
+        for(int x = 0; x < input.length; x++){
+          sum = sum + Integer.parseInt(input[x].getText());
+        }
+        return sum;
       }
       public int findAces()
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+        int count = 0;
+        for(int x = 0; x < input.length; x++){
+          if(input[x].getText().equals("1"))
+            count++;
+        }
+        return count;
       }
       public int findHardestHole()
       {
-         	/************************/
-         	/*                      */
-         	/* Your code goes here. */
-         	/*                      */
-         	/************************/
+        int max = 0;
+        for(int x = 0; x < input.length; x++){
+          max = Math.max(max, Integer.parseInt(input[x].getText()));
+        }
+        int a = 0;
+        for(int x = 0; x < input.length; x++){
+          if(max == Integer.parseInt(input[x].getText())){
+            a = x;
+            break;
+          }
+        }
+        return a+1;
       }
    }
