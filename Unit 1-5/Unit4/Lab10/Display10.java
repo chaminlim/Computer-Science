@@ -3,8 +3,10 @@
 import javax.swing.*;
 import java.awt.*;
 
+@SuppressWarnings("serial")
 public class Display10 extends JPanel {
   private JLabel[] bits;
+  private JLabel label;
 
   public Display10() {
     setLayout(new GridLayout(1, 8));
@@ -15,6 +17,8 @@ public class Display10 extends JPanel {
       add(bits[x]);
     }
     randomize();
+    label = new JLabel("", SwingConstants.CENTER);
+    add(label);
   }
 
   public void randomize() {
@@ -53,5 +57,15 @@ public class Display10 extends JPanel {
     bits[5].setText(bits[6].getText());
     bits[6].setText(bits[7].getText());
     bits[7].setText(bits[0].getText());
+  }
+
+  public void convert() {
+    double number = 0;
+    int m = 128;
+    for (int x = 0; x < bits.length; x++) {
+      number = number + Integer.parseInt(bits[x].getText()) * m;
+      m = m / 2;
+    }
+    label.setText("" + number);
   }
 }
