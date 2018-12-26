@@ -1,8 +1,9 @@
-   //Name:     Date:
+   //Name: Chamin Lim Date: 12/21/18
 
    import java.awt.*;
    import java.awt.event.*;
    import javax.swing.*;
+   @SuppressWarnings("serial")
     public class Panel11 extends JPanel
    {
       private JTextField box;
@@ -12,13 +13,23 @@
        public Panel11()
       {
          setLayout(new BorderLayout());
-      
+
          /********************
       	a local panel, holding a label and a textField, is in the north.
-      	
+
       	a display is in the center.
       	*********************/
-      	
+        JPanel north = new JPanel();
+
+        north.setLayout(new FlowLayout());
+        add(north, BorderLayout.NORTH);
+        JLabel l = new JLabel("Enter an integer from 0 to 255:");
+        box = new JTextField(4);
+        north.add(l);
+        north.add(box);
+        display = new Display11();
+        add(display, BorderLayout.CENTER);
+
          JPanel south = new JPanel();
          south.setLayout(new FlowLayout());
          add(south, BorderLayout.SOUTH);
@@ -66,6 +77,9 @@
             /******************
          	increment and display both numbers here
          	******************/
+          box.setText(String.valueOf(Integer.parseInt(box.getText()) + 1));
+          int x = Integer.parseInt(box.getText());
+          display.setValue(x);
          }
       }
    }
