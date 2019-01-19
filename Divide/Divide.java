@@ -14,6 +14,6 @@ public class Divide
       else if(num1 == num2)
          System.out.println("If you divide " + num1 + " and " + num2 + ", the answer is 1 r 0");
       else
-         System.out.println("If you divide " + num2 + " and " + num1 + ", the answer is " + (num2 / num1) + " r " + (num2  % num1));  
+         System.out.println("If you divide " + num2 + " and " + num1 + ", the answer is " + (num2 / num1) + " r " + (num2  % num1));
    }
 }
