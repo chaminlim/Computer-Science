@@ -2,5 +2,5 @@
 //version 4.4.2003
 
 public abstract class Shape {
-  public abstract double findArea();
+    public abstract double findArea();
 }
