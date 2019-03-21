@@ -6,11 +6,10 @@ import javax.swing.JOptionPane;
 public class Driver11 {
     public static int power(int base, int exp)  //do not use Math.pow
     {
-        int result = 1;
-        for (int i = 1; i <= exp; i++) {
-            result *= base;
+        if (exp == 1) {
+            return base;
         }
-        return result;
+        return base * power(base, exp);
     }
 
     public static int factorial(int n) {
